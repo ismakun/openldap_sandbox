@@ -1,17 +1,11 @@
-# bitnami openldap doesn't have modules configured out of the box so we add it
-dn: cn=module,cn=config
-changetype: add
-objectClass: olcModuleList
-
-# We load the ppolicy module
+# Load ppolicy module
 dn: cn=module{0},cn=config
-changetype: modify
-add: olcModuleLoad
+objectClass: olcModuleList
+cn: module{0}
 olcModuleLoad: ppolicy
 
 # We add the ppolicy overlay to our configuration
 dn: olcOverlay=ppolicy,olcDatabase={2}mdb,cn=config
-changetype: add
 objectClass: olcOverlayConfig
 objectClass: olcPPolicyConfig
 olcOverlay: ppolicy

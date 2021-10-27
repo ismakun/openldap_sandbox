@@ -14,7 +14,7 @@ COPY load-ppolicy.ldif /opt/custom-ldapconfig
 COPY default-ppolicy.ldif /opt/custom-ldapconfig
 
 # Copy script that adds the ppolicy overlay
-COPY add-ppolicy-module.sh /docker-entrypoint-initdb.d
+COPY add-ppolicy.sh /docker-entrypoint-initdb.d
 
 # Copy 3rd party libraries
 RUN ["mkdir", "-p", "/opt/unboundedid/ldapsdk"]

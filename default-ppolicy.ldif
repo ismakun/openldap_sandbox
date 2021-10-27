@@ -1,10 +1,9 @@
+# Specify the default ppolicy
 dn: ou=Policies,dc=example,dc=org
-changetype: add
 ou: Policies
 objectClass: organizationalUnit
 
 dn: cn=passwordDefault,ou=Policies,dc=example,dc=org
-changetype: add
 objectClass: pwdPolicy
 objectClass: person
 objectClass: top

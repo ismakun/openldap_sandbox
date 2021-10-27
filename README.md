@@ -38,7 +38,6 @@ Now you can run the ldif-diff tool to generate the ldif file we will use to modi
 
 ```
 cd /myData
-export PATH=$PATH:/opt/unboundedid/ldapsdk/unboundid-ldapsdk-6.0.2/tools/
 ldif-diff -s oldData.ldif -t newData.ldif -o results.ldif
 ```
 

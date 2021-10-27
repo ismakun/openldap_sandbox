@@ -20,6 +20,7 @@ COPY add-ppolicy.sh /docker-entrypoint-initdb.d
 RUN ["mkdir", "-p", "/opt/unboundedid/ldapsdk"]
 COPY ./cots/unboundid-ldapsdk-6.0.2.zip /opt/unboundedid/ldapsdk
 RUN ["unzip", "/opt/unboundedid/ldapsdk/unboundid-ldapsdk-6.0.2.zip", "-d", "/opt/unboundedid/ldapsdk"]
+ENV PATH=$PATH:/opt/unboundedid/ldapsdk/unboundid-ldapsdk-6.0.2/tools
 
 # Start OpenLDAP
 ENTRYPOINT [ "/opt/bitnami/scripts/openldap/entrypoint.sh" ]

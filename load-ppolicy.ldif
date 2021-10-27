@@ -9,7 +9,7 @@ dn: olcOverlay=ppolicy,olcDatabase={2}mdb,cn=config
 objectClass: olcOverlayConfig
 objectClass: olcPPolicyConfig
 olcOverlay: ppolicy
-olcPPolicyDefault: cn=passwordDefault,ou=Policies,dc=mydomain,dc=tld
+olcPPolicyDefault: cn=passwordDefault,ou=Policies,dc=example,dc=org
 olcPPolicyHashCleartext: TRUE
 olcPPolicyUseLockout: FALSE
 olcPPolicyForwardUpdates: FALSE

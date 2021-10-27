@@ -3,7 +3,7 @@ Build and start the image with a volume to persist the ldif files we create:
 ```
 docker build -t openldap_sandbox .
 docker volume create myData
-docker run --rm --mount source=myData,target=/mydata openldap_sandbox
+docker run --rm --mount source=myData,target=/myData -e LDAP_EXTRA_SCHEMAS=cosine,inetorgperson,nis,ppolicy -e LDAP_CONFIG_ADMIN_ENABLED=yes openldap_sandbox
 ```
 
 Attach to the container so we can test the ldif-tool (we do it as root):
@@ -51,7 +51,7 @@ docker stop <container id>
 Restart the container and attach yourself as root:
 
 ```
-docker run --rm --mount source=myData,target=/mydata openldap_sandbox
+docker run --rm --mount source=myData,target=/mydata openldap_sandboxdocker run --rm --mount source=myData,target=/myData -e LDAP_EXTRA_SCHEMAS=cosine,inetorgperson,nis,ppolicy -e LDAP_CONFIG_ADMIN_ENABLED=yes openldap_sandbox
 docker ps
 docker exec -u 0 -it <container id> /bin/bash
 ```

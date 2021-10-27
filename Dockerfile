@@ -13,8 +13,8 @@ RUN ["mkdir", "-p", "/opt/custom-ldapconfig"]
 COPY load-ppolicy.ldif /opt/custom-ldapconfig
 COPY default-ppolicy.ldif /opt/custom-ldapconfig
 
-# Any .sh file in the entry point directory will be executed at startup
-#COPY enable-ppolicy.sh docker-entrypoint-initdb.d
+# Copy script that adds the ppolicy overlay
+COPY add-ppolicy-module.sh /docker-entrypoint-initdb.d
 
 # Copy 3rd party libraries
 RUN ["mkdir", "-p", "/opt/unboundedid/ldapsdk"]

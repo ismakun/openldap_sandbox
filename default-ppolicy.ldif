@@ -12,7 +12,7 @@ sn: passwordDefault
 pwdAttribute: userPassword
 pwdMaxAge: 2592000
 pwdExpireWarning: 3600
-#pwdInHistory: 0
+pwdInHistory: 3
 #pwdCheckQuality: 0
 pwdMaxFailure: 5
 pwdLockout: TRUE
